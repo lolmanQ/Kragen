@@ -27,9 +27,15 @@
     <ClInclude Include="src\Kragen\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Kragen\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Kragen\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kragen\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
