@@ -1,3 +1,6 @@
 [submodule "Kragen/vendor/spdlog"]
 	path = Kragen/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Kragen/vendor/GLFW"]
+	path = Kragen/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW

@@ -10,6 +10,12 @@ workspace "Kragen"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Kragen/vendor/GLFW/include"
+
+include "Kragen/vendor/GLFW"
+
 project "Kragen"
 	location "Kragen"
 	kind "SharedLib"
@@ -18,15 +24,26 @@ project "Kragen"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "krpch.h"
+	pchsource "Kragen/src/krpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	include
+	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links 
+	{ 
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:Windows"
@@ -42,7 +59,7 @@ project "Kragen"
 
 		postbuildcommands
 		{
-			("{COPY} %{ctg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 	
 	filter "configurations:Debug"
@@ -73,9 +90,9 @@ project "Sandbox"
 		"%{prj.name}/src/**.cpp"
 	}
 
-	include
+	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include",
+		"Kragen/vendor/spdlog/include",
 		"Kragen/src"
 	}
 
