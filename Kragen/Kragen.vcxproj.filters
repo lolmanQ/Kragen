@@ -37,6 +37,12 @@
     <ClInclude Include="src\Kragen\Events\MouseEvent.h">
       <Filter>Kragen\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Kragen\Layer.h">
+      <Filter>Kragen</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kragen\LayerStack.h">
+      <Filter>Kragen</Filter>
+    </ClInclude>
     <ClInclude Include="src\Kragen\Log.h">
       <Filter>Kragen</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Kragen\Application.cpp">
+      <Filter>Kragen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kragen\Layer.cpp">
+      <Filter>Kragen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kragen\LayerStack.cpp">
       <Filter>Kragen</Filter>
     </ClCompile>
     <ClCompile Include="src\Kragen\Log.cpp">

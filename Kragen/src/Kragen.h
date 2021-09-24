@@ -3,6 +3,7 @@
 // For use by Kragen applications
 
 #include "Kragen/Application.h"
+#include "Kragen/Layer.h"
 #include "Kragen/Log.h"
 
 

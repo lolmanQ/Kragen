@@ -64,14 +64,17 @@ project "Kragen"
 	
 	filter "configurations:Debug"
 		defines "KR_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "KR_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "KR_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 
@@ -113,12 +116,15 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "KR_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "KR_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "KR_DIST"
+		buildoptions "/MD"
 		optimize "On"
